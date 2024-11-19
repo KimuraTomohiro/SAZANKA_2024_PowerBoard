@@ -785,8 +785,8 @@ text35 3BCC 3BD1 CODE 3BCC 0
 idataBANK2 3BC8 3BCB CODE 3BC8 0
 text63 3BC6 3BC7 CODE 3BC6 0
 %locals
-dist/default/debug/SAZANKA_PowerBoard2024_2.X.debug.o
-/tmp/xcy9kM2b3/driver_tmp_1.s
+dist/default/debug/SAZANKA_PowerBoard2024.X.debug.o
+/tmp/xcw0cC4g0/driver_tmp_1.s
 4353 4C 0 CODE 0
 4356 4C 0 CODE 0
 4466 4C 0 CODE 0

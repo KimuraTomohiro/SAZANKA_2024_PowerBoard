@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/debug/SAZANKA_PowerBoard2024_2.X.debug.hex">
+  <executable name="dist/default/debug/SAZANKA_PowerBoard2024.X.debug.hex">
     <memory name="program">
       <units>words</units>
       <length>8192</length>

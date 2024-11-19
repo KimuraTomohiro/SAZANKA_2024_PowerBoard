@@ -3,12 +3,12 @@ Microchip MPLAB XC8 Compiler V2.50
 Linker command line:
 
 -W-3 --edf=/Applications/microchip/xc8/v2.50/pic/dat/20240725155939_en.msgs \
-  -cn -h+dist/default/production/SAZANKA_PowerBoard2024_2.X.production.sym \
-  --cmf=dist/default/production/SAZANKA_PowerBoard2024_2.X.production.cmf \
-  -z -Q16F1705 -o/tmp/xc9gOfi0x/driver_tmp_3.o --defsym=__MPLAB_BUILD=1 \
+  -cn -h+dist/default/debug/SAZANKA_PowerBoard2024.X.debug.sym \
+  --cmf=dist/default/debug/SAZANKA_PowerBoard2024.X.debug.cmf -z -Q16F1705 \
+  -o/tmp/xcw0cC4g0/driver_tmp_3.o --defsym=__MPLAB_BUILD=1 \
   --fixupoverflow=error \
-  -Mdist/default/production/SAZANKA_PowerBoard2024_2.X.production.map \
-  --md=/tmp/xc9gOfi0x/driver_tmp_0.dat -E1 -ver=XC8 Compiler --acfsm=1493 \
+  -Mdist/default/debug/SAZANKA_PowerBoard2024.X.debug.map \
+  --md=/tmp/xcw0cC4g0/driver_tmp_0.dat -E1 -ver=XC8 Compiler --acfsm=1493 \
   -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
   -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh \
   -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh -ABANK2=0120h-016Fh \
@@ -31,8 +31,8 @@ Linker command line:
   -ASFR31=0F80h-0FEFh -ACONFIG=08007h-08008h -DCONFIG=2 \
   -AIDLOC=08000h-08003h -DIDLOC=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=00h,intentry=04h,sivt,init,end_init -ppowerup=CODE \
-  -pcinit=CODE -pfunctab=ENTRY -k /tmp/xc9gOfi0x/driver_tmp_17.o \
-  dist/default/production/SAZANKA_PowerBoard2024_2.X.production.o 
+  -pcinit=CODE -pfunctab=ENTRY -k /tmp/xcw0cC4g0/driver_tmp_17.o \
+  dist/default/debug/SAZANKA_PowerBoard2024.X.debug.o 
 
 Object code version is 3.11
 
@@ -41,17 +41,17 @@ Machine type is 16F1705
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xc9gOfi0x/driver_tmp_17.o
+/tmp/xcw0cC4g0/driver_tmp_17.o
                 end_init                             4A       4A        2        8       0
-                reset_vec                             0        0        2        0       0
+                reset_vec                             0        0        3        0       0
                 config                             8007     8007        2        0       4
-dist/default/production/SAZANKA_PowerBoard2024_2.X.production.o
+dist/default/debug/SAZANKA_PowerBoard2024.X.debug.o
                 cinit                                4C       4C       2D        8       0
                 intentry                              4        4       46        8       0
                 config                             8007     8007        2        0       4
-                text63                             1DE4     1DE4        1     3BC8       0
+                text63                             1DE3     1DE3        1     3BC6       0
                 text62                             1E43     1E43        F     3C86       0
-                text61                             1DE5     1DE5        1     3BCA       0
+                text61                             1000     1000        1     1B8A       0
                 text60                             1DF5     1DF5        4     3BEA       0
                 text59                             1DFF     1DFF        8     3BFE       0
                 text58                             1043     1043       23     2086       0
@@ -60,7 +60,7 @@ dist/default/production/SAZANKA_PowerBoard2024_2.X.production.o
                 text55                             11CF     11CF       5C     239E       0
                 text54                             1EF2     1EF2       1A     3DE4       0
                 text53                             1145     1145       3B     228A       0
-                text52                             1000     1000        1     1B8A       0
+                text52                                3        3        1        0       0
                 text51                             1F81     1F81       1F     3F02       0
                 text49                             1022     1022       21     2044       0
                 text48                             1E52     1E52        F     3CA4       0
@@ -133,17 +133,17 @@ dist/default/production/SAZANKA_PowerBoard2024_2.X.production.o
                 nvBANK3                             1B0      1B0        2      1A0       1
                 nvBANK2                             165      165        6      120       1
                 stringtext1                        1800     1800       30     3000       0
-                idataBANK2                            2        2        2        0       0
+                idataBANK2                         1DE4     1DE4        2     3BC8       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
                 end_init                             4A       4A        2         0
                 cinit                                4C       4C       2D         0
                 intentry                              4        4       46         0
-                reset_vec                             0        0        2         0
-                text63                             1DE4     1DE4        1         0
+                reset_vec                             0        0        3         0
+                text63                             1DE3     1DE3        1         0
                 text62                             1E43     1E43        F         0
-                text61                             1DE5     1DE5        1         0
+                text61                             1000     1000        1         0
                 text60                             1DF5     1DF5        4         0
                 text59                             1DFF     1DFF        8         0
                 text58                             1043     1043       23         0
@@ -152,7 +152,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text55                             11CF     11CF       5C         0
                 text54                             1EF2     1EF2       1A         0
                 text53                             1145     1145       3B         0
-                text52                             1000     1000        1         0
+                text52                                3        3        1         0
                 text51                             1F81     1F81       1F         0
                 text49                             1022     1022       21         0
                 text48                             1E52     1E52        F         0
@@ -205,7 +205,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text1                              1EC8     1EC8       14         0
                 maintext                            9D8      9D8      1E1         0
                 clrtext                            1DF9     1DF9        6         0
-                idataBANK2                            2        2        2         0
+                idataBANK2                         1DE4     1DE4        2         0
 
         CLASS   STRCODE        
                 stringtext7                        188C     188C        4         0
@@ -425,8 +425,8 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 text41                         001E19  000009  001E22      3C32       0  CODE        2
                 text45                         001E10  000009  001E19      3C20       0  CODE        2
                 text30                         001DF2  000003  001DF5      3BE4       0  CODE        2
-                text61                         001DE5  000001  001DE6      3BCA       0  CODE        2
-                text63                         001DE4  000001  001DE5      3BC8       0  CODE        2
+                idataBANK2                     001DE4  000002  001DE6      3BC8       0  CODE        2
+                text63                         001DE3  000001  001DE4      3BC6       0  CODE        2
                 text35                         001DE6  000003  001DE9      3BCC       0  CODE        2
                 text31                         001DEF  000003  001DF2      3BDE       0  CODE        2
                 text32                         001DEC  000003  001DEF      3BD8       0  CODE        2
@@ -472,10 +472,10 @@ UNUSED ADDRESS RANGES
         BANK8            00420-0046F              50           1
         BANK9            004A0-004EF              50           1
         BIGRAM           02000-023EF             3F0           1
-        CODE             01890-01DE3             554           2
+        CODE             01890-01DE2             553           2
         COMMON           0007C-0007D               2           1
-        CONST            01890-01DE3             100           2
-        ENTRY            01890-01DE3             100           2
+        CONST            01890-01DE2             100           2
+        ENTRY            01890-01DE2             100           2
         IDLOC            08000-08003               4           2
         RAM              000EC-000EF               4           1
                          0016D-0016F               3
@@ -520,8 +520,8 @@ UNUSED ADDRESS RANGES
         SFR7             00380-0039F              20           1
         SFR8             00400-0041F              20           1
         SFR9             00480-0049F              20           1
-        STRCODE          01890-01DE3             554           2
-        STRING           01890-01DE3             100           2
+        STRCODE          01890-01DE2             553           2
+        STRING           01890-01DE2             100           2
 
                                   Symbol Table
 
@@ -560,7 +560,7 @@ _ADCON0                                             (abs)        0009D
 _ADCON0bits                                         (abs)        0009D
 _ADCON1                                             (abs)        0009E
 _ADCON2                                             (abs)        0009F
-_ADC_DefaultInterruptHandler                        text63       01DE4
+_ADC_DefaultInterruptHandler                        text63       01DE3
 _ADC_GetConversion                                  text49       01022
 _ADC_ISR                                            text62       01E43
 _ADC_Initialize                                     text46       01EB4
@@ -576,7 +576,7 @@ _BORCON                                             (abs)        00116
 _CLOCK_Initialize                                   text45       01E10
 _EUSART_AutoBaudQuery                               (abs)        00000
 _EUSART_AutoBaudSet                                 (abs)        00000
-_EUSART_DefaultFramingErrorCallback                 text61       01DE5
+_EUSART_DefaultFramingErrorCallback                 text61       01000
 _EUSART_DefaultOverrunErrorCallback                 text60       01DF5
 _EUSART_Deinitialize                                (abs)        00000
 _EUSART_ErrorGet                                    (abs)        00000
@@ -646,7 +646,7 @@ _SYSTEM_Initialize                                  text37       01EA1
 _T4CON                                              (abs)        00417
 _T4CONbits                                          (abs)        00417
 _TMR4                                               (abs)        00415
-_TMR4_DefaultPeriodMatchCallback                    text52       01000
+_TMR4_DefaultPeriodMatchCallback                    text52       00003
 _TMR4_ISR                                           text51       01F81
 _TMR4_Initialize                                    text38       01E7F
 _TMR4_PeriodMatchCallback                           nvBANK2      00165
@@ -722,7 +722,7 @@ __HnvBANK2                                          nvBANK2      00000
 __HnvBANK3                                          nvBANK3      00000
 __Hpowerup                                          powerup      00000
 __Hram                                              ram          00000
-__Hreset_vec                                        reset_vec    00002
+__Hreset_vec                                        reset_vec    00003
 __Hsfr0                                             sfr0         00000
 __Hsfr1                                             sfr1         00000
 __Hsfr10                                            sfr10        00000
@@ -957,13 +957,13 @@ ___xxtofl@arg                                       cstackBANK0  0002E
 ___xxtofl@exp                                       cstackBANK0  0002D
 ___xxtofl@sign                                      cstackBANK0  0002C
 ___xxtofl@val                                       cstackBANK0  00024
-__end_of_ADC_DefaultInterruptHandler                text63       01DE5
+__end_of_ADC_DefaultInterruptHandler                text63       01DE4
 __end_of_ADC_GetConversion                          text49       01043
 __end_of_ADC_ISR                                    text62       01E52
 __end_of_ADC_Initialize                             text46       01EC8
 __end_of_ADC_SetInterruptHandler                    text47       01E10
 __end_of_CLOCK_Initialize                           text45       01E19
-__end_of_EUSART_DefaultFramingErrorCallback         text61       01DE6
+__end_of_EUSART_DefaultFramingErrorCallback         text61       01001
 __end_of_EUSART_DefaultOverrunErrorCallback         text60       01DF9
 __end_of_EUSART_FramingErrorCallbackRegister        text44       01E70
 __end_of_EUSART_Initialize                          text42       01145
@@ -984,7 +984,7 @@ __end_of_LED_24V_Off                                text33       01DEC
 __end_of_LED_24V_On                                 text31       01DF2
 __end_of_PIN_MANAGER_Initialize                     text39       010DC
 __end_of_SYSTEM_Initialize                          text37       01EB4
-__end_of_TMR4_DefaultPeriodMatchCallback            text52       01001
+__end_of_TMR4_DefaultPeriodMatchCallback            text52       00004
 __end_of_TMR4_ISR                                   text51       01FA0
 __end_of_TMR4_Initialize                            text38       01E90
 __end_of_TMR4_PeriodMatchCallbackRegister           text36       01E2B
@@ -1035,7 +1035,7 @@ __pcstackBANK2                                      cstackBANK2  0015B
 __pcstackBANK3                                      cstackBANK3  001A8
 __pcstackCOMMON                                     cstackCOMMON 00076
 __pdataBANK2                                        dataBANK2    0016B
-__pidataBANK2                                       idataBANK2   00002
+__pidataBANK2                                       idataBANK2   01DE4
 __pintentry                                         intentry     00004
 __pmaintext                                         maintext     009D8
 __pnvBANK2                                          nvBANK2      00165
@@ -1094,7 +1094,7 @@ __ptext48                                           text48       01E52
 __ptext49                                           text49       01022
 __ptext5                                            text5        01FE0
 __ptext51                                           text51       01F81
-__ptext52                                           text52       01000
+__ptext52                                           text52       00003
 __ptext53                                           text53       01145
 __ptext54                                           text54       01EF2
 __ptext55                                           text55       011CF
@@ -1104,9 +1104,9 @@ __ptext58                                           text58       01043
 __ptext59                                           text59       01DFF
 __ptext6                                            text6        00079
 __ptext60                                           text60       01DF5
-__ptext61                                           text61       01DE5
+__ptext61                                           text61       01000
 __ptext62                                           text62       01E43
-__ptext63                                           text63       01DE4
+__ptext63                                           text63       01DE3
 __ptext7                                            text7        01F0C
 __ptext8                                            text8        010DC
 __ptext9                                            text9        00808
@@ -1286,7 +1286,7 @@ mcc_generated_files/system/src/interrupt.c estimated size: 91
 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/printf.c estimated size: 20
 
 mcc_generated_files/adc/src/adc.c
-		_ADC_DefaultInterruptHandler		CODE           	1DE4	0000	1
+		_ADC_DefaultInterruptHandler		CODE           	1DE3	0000	1
 		_ADC_Initialize		CODE           	1EB4	0000	20
 		_ADC_SetInterruptHandler		CODE           	1E07	0000	9
 		_ADC_GetConversion		CODE           	1022	0000	33
@@ -1337,7 +1337,7 @@ shared estimated size: 74
 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/Umul8_16.c estimated size: 36
 
 mcc_generated_files/timer/src/tmr4.c
-		_TMR4_DefaultPeriodMatchCallback		CODE           	1000	0000	1
+		_TMR4_DefaultPeriodMatchCallback		CODE           	0003	0000	1
 		_TMR4_ISR      		CODE           	1F81	0000	31
 		_TMR4_Initialize		CODE           	1E7F	0000	17
 		_TMR4_PeriodMatchCallbackRegister		CODE           	1E22	0000	9
@@ -1362,7 +1362,7 @@ mcc_generated_files/uart/src/eusart.c
 		_EUSART_Initialize		CODE           	1110	0000	53
 		_EUSART_RxCompleteCallbackRegister		CODE           	1E52	0000	15
 		_EUSART_TransmitISR		CODE           	1EF2	0000	26
-		_EUSART_DefaultFramingErrorCallback		CODE           	1DE5	0000	1
+		_EUSART_DefaultFramingErrorCallback		CODE           	1000	0000	1
 		_EUSART_ReceiveISR		CODE           	11CF	0000	92
 
 mcc_generated_files/uart/src/eusart.c estimated size: 329
