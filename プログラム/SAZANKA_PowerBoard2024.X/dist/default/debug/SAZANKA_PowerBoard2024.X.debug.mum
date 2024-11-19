@@ -1,7 +1,7 @@
 
 16F1705 Memory Summary:
-    Program space        used  1AADh (  6829) of  2000h words   ( 83.4%)
-    Data space           used   159h (   345) of   400h bytes   ( 33.7%)
+    Program space        used  1A9Dh (  6813) of  2000h words   ( 83.2%)
+    Data space           used   155h (   341) of   400h bytes   ( 33.3%)
     EEPROM space         None available
     Configuration bits   used     2h (     2) of     2h words   (100.0%)
     ID Location space    used     0h (     0) of     4h bytes   (  0.0%)

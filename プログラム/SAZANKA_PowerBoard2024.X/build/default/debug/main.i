@@ -7739,7 +7739,11 @@ void TMR4_PeriodMatchCallbackRegister(void (* CallbackHandler)(void));
 # 57 "./mcc_generated_files/system/../uart/../system/system.h"
 void SYSTEM_Initialize(void);
 # 1 "main.c" 2
-# 18 "main.c"
+# 17 "main.c"
+unsigned int voltage_raw_24 = 0;
+unsigned int voltage_raw_12 = 0;
+
+
 void LED_24V_On() { do { LATAbits.LATA4 = 1; } while(0); }
 void LED_24V_Off() { do { LATAbits.LATA4 = 0; } while(0); }
 void LED_12V_On() { do { LATAbits.LATA5 = 1; } while(0); }
@@ -7775,8 +7779,11 @@ int main(void)
     while (1) {
 
 
-        voltage_24 = ADC_GetConversion(VREF_24V) * 0.0008789 + -3.3375;
-        voltage_12 = ADC_GetConversion(VREF_12V) * 0.00042613636 + -1.52727272;
+        voltage_raw_24 = ADC_GetConversion(VREF_24V);
+        voltage_raw_12 = ADC_GetConversion(VREF_12V);
+
+        voltage_24 = voltage_raw_24 * 0.0008789 + -3.3375;
+        voltage_12 = voltage_raw_12 * 0.00042613636 + -1.52727272;
 
         printf("VH:%.1f VL:%.1f\n", (voltage_24 > 9.0) ? voltage_24 : 0,
                                      (voltage_12 > 6.0) ? voltage_12 : 0);

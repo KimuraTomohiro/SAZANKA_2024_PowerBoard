@@ -14,6 +14,9 @@
 #define A_12V           0.00042613636
 #define B_12V           -1.52727272
 
+unsigned int voltage_raw_24 = 0;
+unsigned int voltage_raw_12 = 0;
+
 // マクロ用ラッパー関数
 void LED_24V_On() { LED_24V_SetHigh(); }
 void LED_24V_Off() { LED_24V_SetLow(); }
@@ -50,8 +53,11 @@ int main(void)
     while (1) {
         
         
-        voltage_24 = ADC_GetConversion(VREF_24V) * A_24V + B_24V;
-        voltage_12 = ADC_GetConversion(VREF_12V) * A_12V + B_12V;
+        voltage_raw_24 = ADC_GetConversion(VREF_24V);
+        voltage_raw_12 = ADC_GetConversion(VREF_12V);
+        
+        voltage_24 = voltage_raw_24 * A_24V + B_24V;
+        voltage_12 = voltage_raw_12 * A_12V + B_12V;
 
         printf("VH:%.1f VL:%.1f\n", (voltage_24 > RESET_24) ? voltage_24 : 0, 
                                      (voltage_12 > RESET_12) ? voltage_12 : 0);
