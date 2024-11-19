@@ -1,5 +1,6 @@
 # SAZANKA_2024_PowerBoard
 PowerBoard of SAZANKA in Nagoya Institute of Technology
+
 2024年バージョンの電源基板です
 ### 基板機能紹介
 緑色部分は機体班含め知っておいて欲しい部分、青色部分は回路・制御班が知っておいて欲しい部分
