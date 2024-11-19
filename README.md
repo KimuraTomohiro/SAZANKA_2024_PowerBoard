@@ -4,7 +4,8 @@ PowerBoard of SAZANKA in Nagoya Institute of Technology
 2024年バージョンの電源基板です
 ### 基板機能紹介
 緑色部分は機体班含め知っておいて欲しい部分、青色部分は回路・制御班が知っておいて欲しい部分
-![図1](https://github.com/user-attachments/assets/41b4d23c-b20e-4ea2-a32a-a440a7056c97)
+![図1](https://github.com/user-attachments/assets/6401ee08-897b-42ce-858f-683fa03049fb)
+
 
 ## 使い方
 ### 出力LED
