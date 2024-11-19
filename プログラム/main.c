@@ -27,7 +27,7 @@ char reset_flg_24 = 4, reset_flg_12 = 4;
 
 // プロトタイプ宣言
 void timer_interrupt();
-void handle_voltage(double voltage, double threshold, char *reset_flg, void (*LED_SetHigh)(), void (*LED_SetLow)());
+void handle_voltage(double voltage, double threshold, char mode, char *reset_flg, void (*LED_SetHigh)(), void (*LED_SetLow)());
 void handle_buzzer();
 void delay_ms(unsigned int ms);
 void check_RX_Data();
@@ -56,8 +56,8 @@ int main(void)
         printf("VH:%.1f VL:%.1f\n", (voltage_24 > RESET_24) ? voltage_24 : 0, 
                                      (voltage_12 > RESET_12) ? voltage_12 : 0);
 
-        handle_voltage(voltage_24, RESET_24, &reset_flg_24, LED_24V_On, LED_24V_Off);
-        handle_voltage(voltage_12, RESET_12, &reset_flg_12, LED_12V_On, LED_12V_Off);
+        handle_voltage(voltage_24, RESET_24, 24, &reset_flg_24, LED_24V_On, LED_24V_Off);
+        handle_voltage(voltage_12, RESET_12, 12, &reset_flg_12, LED_12V_On, LED_12V_Off);
 
         
         if(config_flg == 1)
@@ -72,7 +72,7 @@ int main(void)
     }
 }
 
-void handle_voltage(double voltage, double threshold, char *reset_flg, void (*LED_SetHigh)(), void (*LED_SetLow)())
+void handle_voltage(double voltage, double threshold, char mode, char *reset_flg, void (*LED_SetHigh)(), void (*LED_SetLow)())
 {
     if (voltage < threshold && *reset_flg == 3) {
         *reset_flg = 4;
@@ -87,20 +87,22 @@ void handle_voltage(double voltage, double threshold, char *reset_flg, void (*LE
     }
     
     
-    if (voltage <= NOTIFICATION_24 && *reset_flg == 1) {
+    if (((mode == 24 && voltage <= NOTIFICATION_24) || (mode == 12 && voltage <= NOTIFICATION_12)) && *reset_flg == 1) {
         LED_SetHigh();
         delay_ms(5000);
         *reset_flg = 2;
         handle_buzzer();
-    }else if(voltage > NOTIFICATION_24 && *reset_flg == 1){
+    }else if(((mode == 24 && voltage > NOTIFICATION_24) || (mode == 12 && voltage > NOTIFICATION_12)) && *reset_flg == 1){
         *reset_flg = 0; 
     }
 
-    if (voltage <= ALART_24 && *reset_flg <= 2) {
+    if (((mode == 24 && voltage <= ALART_24) || (mode == 12 && voltage <= ALART_12)) && *reset_flg <= 2) {
         *reset_flg = 3;
     }
+    
+    
 
-    if (voltage >= RESET_24 && *reset_flg == 4) {
+    if (((mode == 24 && voltage >= RESET_24) || (mode == 12 && voltage >= RESET_12)) && *reset_flg == 4) {
         *reset_flg = 0;
         BUZZER_SetHigh();
         LED_SetHigh();
